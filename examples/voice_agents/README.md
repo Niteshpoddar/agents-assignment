@@ -182,7 +182,7 @@ Logs include:
 ## ❓ FAQ
 
 **Q: What if I say “yeah” when the agent is silent?**
-A: The agent will respond normally. Filtering only applies while the agent is speaking.
+*A: The agent will respond normally. Filtering only applies while the agent is speaking.*
 
 **Q: Can I change Kelly’s personality?**
 A: Yes. Modify the `instructions` field in the agent definition.

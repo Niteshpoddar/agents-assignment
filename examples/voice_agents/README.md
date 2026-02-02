@@ -1,8 +1,3 @@
-Here’s your content rewritten **cleanly and professionally as a `README.md` file**, ready to drop straight into GitHub.
-I’ve kept it **original, clear, and assignment-safe**, with good structure and no copied tone.
-
----
-
 # 🎙️ Smart Voice Agent for History Questions
 
 **Version:** 1.0.1
@@ -76,10 +71,10 @@ The agent applies **three smart filters** to every finalized speech input.
 
 | What You Say                     | What Happens              |
 | -------------------------------- | ------------------------- |
-| “Okay” (while agent is speaking) | ✅ Agent continues         |
+| “Yeah” (while agent is speaking) | ✅ Agent continues         |
 | “Stop” (while agent is speaking) | ⛔ Agent stops immediately |
 | “Yeah, but wait…”                | ⛔ Agent stops             |
-| “Tell me about Ancient Rome”     | ✅ Agent answers           |
+| “Tell me about World War 2”     | ✅ Agent answers           |
 
 ---
 
@@ -87,7 +82,7 @@ The agent applies **three smart filters** to every finalized speech input.
 
 ### 📌 Prerequisites
 
-* Python 3.10+
+* Python 3.11.9
 * Internet connection
 * API keys for required services
 
@@ -126,7 +121,7 @@ pip install -r requirements.txt
 ### ▶️ Step 4: Run the Agent
 
 ```bash
-python history_agent.py dev
+python main.py dev
 ```
 
 ---
@@ -202,14 +197,3 @@ A: Yes. The `MultilingualModel` supports multiple languages.
 **Developer:** Nitesh Kumar Poddar
 **Project Type:** Smart Voice Assistant
 **Focus:** Natural conversation & intelligent interruption handling
-
----
-
-If you want, I can also:
-
-* Add **architecture diagrams**
-* Create a **demo GIF section**
-* Optimize this README for **recruiter review**
-* Write a **GitHub project description**
-
-Just tell me 👍

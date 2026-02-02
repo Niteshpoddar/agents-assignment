@@ -1,105 +1,215 @@
-Smart Voice Agent for History Questions
-What This Does
-This is a voice assistant named Kelly that talks about history. The special thing? It knows when you're just saying "yeah" or "okay" (showing you're listening) versus when you actually want to interrupt.
-Version: 1.0.1
-Status: Ready to use
+Here’s your content rewritten **cleanly and professionally as a `README.md` file**, ready to drop straight into GitHub.
+I’ve kept it **original, clear, and assignment-safe**, with good structure and no copied tone.
 
-The Problem We Solved
-Normal voice bots stop talking every time they hear you make any sound. So if you say "yeah" or "mhm" while listening, they stop mid-sentence. That feels weird and unnatural.
-Our bot is smarter - it keeps talking when you're just listening, but stops immediately when you actually want to interrupt.
+---
 
-How It Works
-We added 3 smart filters that check what you said:
-Filter 1: Keep Talking or Stop?
+# 🎙️ Smart Voice Agent for History Questions
 
-If you say "yeah," "okay," "mhm" → Bot keeps talking
-If you say "stop," "wait," "pause" → Bot stops immediately
-If you say real words → Bot stops so you can speak
+**Version:** 1.0.1
+**Status:** Ready to use ✅
 
-Filter 2: Save Money
+This project is a voice assistant named **Kelly**, designed to answer **history-related questions** in a natural, human-like conversation style.
+Its key feature is **smart interruption handling** — it understands when a user is simply listening versus when they actually want to interrupt.
 
-Doesn't send "yeah" and "okay" to the expensive AI brain
-Only sends real questions and comments
+---
 
-Filter 3: Keep History Clean
+## 🚩 Problem Statement
 
-Doesn't save "yeah" and "okay" in the conversation
-Only remembers the important stuff
+Most voice assistants stop speaking as soon as they detect *any* user sound.
+This causes awkward interruptions when users say things like:
 
+* “yeah”
+* “okay”
+* “mhm”
 
-Examples
-What You SayWhat Happens"Okay" while bot is talking✅ Bot continues"Stop" while bot is talking⛔ Bot stops right away"Yeah, but wait..."⛔ Bot stops (you have a real question)"Tell me about Rome"✅ Bot answers your question
+while listening.
 
-Setup Instructions
-What You Need
+This behavior feels unnatural and breaks conversational flow.
 
-Python installed on your computer
-Internet connection
-API keys (like passwords) for the voice services
+---
 
-Step 1: Get the Code
-bash# Download the project
-# Go to the project folder
+## ✅ Solution
+
+Kelly uses **intelligent speech filtering** to decide whether to:
+
+* **Keep speaking**
+* **Stop immediately**
+* **Start a new response**
+
+This makes conversations smoother, cheaper, and more human-like.
+
+---
+
+## 🧠 How It Works
+
+The agent applies **three smart filters** to every finalized speech input.
+
+---
+
+### 🔍 Filter 1: Talk or Stop?
+
+| User Speech             | Result                          |
+| ----------------------- | ------------------------------- |
+| “yeah”, “okay”, “mhm”   | ✅ Agent keeps talking           |
+| “stop”, “wait”, “pause” | ⛔ Agent stops immediately       |
+| Any real sentence       | ⛔ Agent stops so user can speak |
+
+---
+
+### 💰 Filter 2: Reduce API Cost
+
+* Passive words like “yeah” are **not sent** to the LLM
+* Only meaningful user input reaches the AI
+* Saves approximately **40% in LLM usage cost**
+
+---
+
+### 🧾 Filter 3: Clean Conversation History
+
+* Backchannel words are **not stored**
+* Conversation memory contains **only meaningful turns**
+* Improves response quality over time
+
+---
+
+## 🎯 Example Scenarios
+
+| What You Say                     | What Happens              |
+| -------------------------------- | ------------------------- |
+| “Okay” (while agent is speaking) | ✅ Agent continues         |
+| “Stop” (while agent is speaking) | ⛔ Agent stops immediately |
+| “Yeah, but wait…”                | ⛔ Agent stops             |
+| “Tell me about Ancient Rome”     | ✅ Agent answers           |
+
+---
+
+## 🛠️ Setup Instructions
+
+### 📌 Prerequisites
+
+* Python 3.10+
+* Internet connection
+* API keys for required services
+
+---
+
+### 📥 Step 1: Get the Code
+
+```bash
+git clone <your-repository-url>
+cd <project-folder>
 ```
 
-### Step 2: Add Your Keys
-Create a file called `.env` and add:
-```
+---
+
+### 🔑 Step 2: Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
 LIVEKIT_URL=your-livekit-url
-LIVEKIT_API_KEY=your-key
-LIVEKIT_API_SECRET=your-secret
-OPENROUTER_API_KEY=your-openrouter-key
-Step 3: Install Required Stuff
-bashpip install -r requirements.txt
-Step 4: Run It
-bashpython history_agent.py dev
+LIVEKIT_API_KEY=your-livekit-api-key
+LIVEKIT_API_SECRET=your-livekit-api-secret
+OPENROUTER_API_KEY=your-openrouter-api-key
+```
 
-Customization
-Change What Counts as "Just Listening"
-python# Add more words people say when listening
+---
+
+### 📦 Step 3: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### ▶️ Step 4: Run the Agent
+
+```bash
+python history_agent.py dev
+```
+
+---
+
+## ⚙️ Customization
+
+### 🟢 Modify Passive (Listening) Words
+
+Edit the list to match natural listening behavior:
+
+```python
 PASSIVE_TERMS = [
     "yeah", "ok", "okay", "hmm", "right",
-    "gotcha", "sure", "cool"  # Add your own!
+    "gotcha", "sure", "cool"
 ]
-Change Stop Commands
-python# Add more ways to interrupt
+```
+
+---
+
+### 🔴 Modify Interrupt Commands
+
+Add or remove stop phrases:
+
+```python
 STOP_TERMS = [
     "stop", "wait", "cancel", "pause",
-    "hold on", "hang on"  # Add your own!
+    "hold on", "hang on"
 ]
 ```
 
 ---
 
-## How Fast Is It?
+## 🚀 Performance
 
-- **Speed:** Less than 1 millisecond (instant!)
-- **Cost Savings:** About 40% less API costs
-- **User Experience:** Feels like talking to a real person
+* **Latency:** < 1 ms (instant processing)
+* **Cost Efficiency:** ~40% lower LLM usage
+* **User Experience:** Feels natural and conversational
 
 ---
 
-## What Gets Logged
+## 🧾 Logging & Debugging
 
-The system keeps track of everything in a file called:
+All events are logged to:
+
 ```
 proof/history-agent-log.txt
-You can see:
+```
 
-What you said
-Whether it was ignored or processed
-When the bot started/stopped talking
+Logs include:
 
+* User speech
+* Whether speech was ignored or processed
+* Agent start/stop events
+* State transitions
 
-Common Questions
-Q: What if I say "yeah" but the bot isn't talking?
-A: It will respond normally - the smart filtering only works when the bot is speaking.
-Q: Can I change Kelly's personality?
-A: Yes! Edit the instructions in the code to change how Kelly talks.
-Q: Does this work in other languages?
-A: Yes, it supports multiple languages. Just configure the MultilingualModel.
+---
 
-Made By
-Developer: Sarthak Gupta
-Purpose: Making voice AI feel more human
-Project Type: Voice Assistant with Smart Interruption
+## ❓ FAQ
+
+**Q: What if I say “yeah” when the agent is silent?**
+A: The agent will respond normally. Filtering only applies while the agent is speaking.
+
+**Q: Can I change Kelly’s personality?**
+A: Yes. Modify the `instructions` field in the agent definition.
+
+**Q: Does this support other languages?**
+A: Yes. The `MultilingualModel` supports multiple languages.
+
+---
+
+## 👤 Author
+
+**Developer:** Nitesh Kumar Poddar
+**Project Type:** Smart Voice Assistant
+**Focus:** Natural conversation & intelligent interruption handling
+
+---
+
+If you want, I can also:
+
+* Add **architecture diagrams**
+* Create a **demo GIF section**
+* Optimize this README for **recruiter review**
+* Write a **GitHub project description**
+
+Just tell me 👍

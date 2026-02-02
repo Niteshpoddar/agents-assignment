@@ -177,28 +177,24 @@ Logs include:
 * Agent start/stop events
 * State transitions
 
-
-## ❓ Frequently Asked Questions (FAQ)
+## Frequently Asked Questions (FAQ)
 
 **Q: What if I say “yeah” when the agent is silent?**
-**A:** The agent will respond normally. Smart filtering is only applied while the agent is actively speaking.
-
----
+*A: The agent will respond normally. Smart filtering is only applied while the agent is actively speaking.
 
 **Q: Can I change Kelly’s personality?**
-**A:** Yes. You can modify the `instructions` field in the agent definition to change tone, style, or behavior.
-
----
+*A: Yes. You can modify the instructions field in the agent definition to change tone, style, or behavior.
 
 **Q: Does this support other languages?**
-**A:** Yes. The agent uses a `MultilingualModel`, which supports multiple languages.
+*A: Yes. The agent uses a MultilingualModel, which supports multiple languages.
 
 ---
 
 ## 👤 Author
 
-**Developer:** Nitesh Kumar Poddar
-**Project Type:** Smart Voice Assistant
-**Focus:** Natural conversation and intelligent interruption handling
+* **Developer:** Nitesh Kumar Poddar
+* **Project Type:** Smart Voice Assistant
+* **Focus:** Natural conversation and intelligent interruption handling
+
 
 
